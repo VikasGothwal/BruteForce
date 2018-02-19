@@ -1,6 +1,7 @@
 #!/usr/bin/python -tt
 import urllib
 import sys
+import termcolor
 
 def get(baseurl,usernames,passwords):
      for u in usernames:
@@ -28,7 +29,7 @@ def main():
         passwords = open(sys.argv[5],'r').read().split('\n')
         baseurl=sys.argv[1]+'?'
 
-        print open('logo.txt','r').read()
+        print termcolor.colored((open('logo.txt','r').read()),'red')
     
         if sys.argv[6]=='GET':
             get(baseurl,usernames,passwords)
